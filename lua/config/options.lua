@@ -48,3 +48,4 @@ if vim.g.neovide then
 end
 
 vim.o.fileformats = "unix,dos"
+vim.o.cursorlineopt = "number"
