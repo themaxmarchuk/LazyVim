@@ -17,6 +17,7 @@ return {
           "typescript",
 
           -- systems
+          "odin",
           "rust",
           "c",
           "cpp",

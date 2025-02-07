@@ -8,6 +8,7 @@ return {
     servers = {
       gdscript = {},
       rust_analyzer = {},
+      ols = {},
     },
     setup = {
       gdscript = function(_, opts)

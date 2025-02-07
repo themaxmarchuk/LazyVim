@@ -88,4 +88,14 @@ return {
     "EdenEast/nightfox.nvim",
     lazy = true,
   },
+  {
+    "themaxmarchuk/grail",
+    dir = "C:\\Users\\Max\\dev\\grail",
+    lazy = true,
+    opts = {
+      italics = false,
+      disable_italic_comments = true,
+    },
+  },
+  { "hachy/eva01.vim", lazy = true },
 }
