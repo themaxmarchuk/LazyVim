@@ -5,10 +5,13 @@ local is_win = vim.fn.has("win32") == 1
 return {
   "neovim/nvim-lspconfig",
   opts = {
+    doucment_highlight = {
+      enabled = false,
+    },
     servers = {
       gdscript = {},
       rust_analyzer = {},
-      ols = {},
+      ols = { mason = false },
     },
     setup = {
       gdscript = function(_, opts)

@@ -18,22 +18,36 @@ end
 -- vim.o.shell = "cmd.exe /K %CMDER_ROOT%\\vendor\\bin\\vscode_init.cmd"
 local is_win = vim.fn.has("win32") == 1
 
+GlobalTerminal = nil --- @type snacks.win
+
+--- @param cmd string
+function GTermExecute(cmd)
+  if GlobalTerminal ~= nil and vim.fn.bufexists(GlobalTerminal.buf) == 1 then
+    vim.fn.chansend(vim.bo[GlobalTerminal.buf].channel, cmd .. "\r\n")
+  else
+    --- @diagnostic disable-next-line
+    GlobalTerminal = nil
+  end
+end
+
 if is_win then
   map("n", "<M-i>", function()
-    Util.terminal({
-      "cmd.exe",
-      "/K",
-      "%CMDER_ROOT%\\vendor\\bin\\vscode_init.cmd",
+    GlobalTerminal = Snacks.terminal({
+      "nu",
+      -- "cmd.exe",
+      -- "/K",
+      -- "%CMDER_ROOT%\\vendor\\bin\\vscode_init.cmd",
     }, {
       cwd = Util.root(),
     })
   end, { desc = "Terminal (root dir)" })
   map("t", "<M-i>", "<cmd>close<cr>", { desc = "Close terminal" })
   map("n", "<leader>fT", function()
-    Util.terminal({
-      "cmd.exe",
-      "/K",
-      "%CMDER_ROOT%\\vendor\\bin\\vscode_init.cmd",
+    Snacks.terminal({
+      "nu",
+      -- "cmd.exe",
+      -- "/K",
+      -- "%CMDER_ROOT%\\vendor\\bin\\vscode_init.cmd",
     })
   end, { desc = "Terminal (cwd)" })
 end
@@ -43,4 +57,126 @@ map("n", "<M-f>", function()
   Util.format({ force = true })
 end, {
   desc = "Format buffer",
+})
+
+local function get_nvim_colorschemes()
+  local builtin_colorschemes = {
+    "blue",
+    "darkblue",
+    "default",
+    "delek",
+    "desert",
+    "elflord",
+    "evening",
+    "habamax",
+    "industry",
+    "koehler",
+    "lunaperche",
+    "morning",
+    "murphy",
+    "pablo",
+    "peachpuff",
+    "quiet",
+    "retrobox",
+    "ron",
+    "shine",
+    "slate",
+    "sorbet",
+    "torte",
+    "unokai",
+    "vim",
+    "wildcharm",
+    "zaibatsu",
+    "zellner",
+  }
+
+  local items = {} ---@type snacks.picker.finder.Item[]
+  local rtp = vim.o.runtimepath
+
+  if package.loaded.lazy then
+    rtp = rtp .. "," .. table.concat(require("lazy.core.util").get_unloaded_rtp(""), ",")
+  end
+
+  local files = vim.fn.globpath(rtp, "colors/*", false, true) ---@type string[]
+
+  items[1] = {
+    text = vim.g.colors_name,
+    file = "none",
+  }
+  items[2] = {
+    text = "shitter7",
+    file = "none",
+  }
+
+  for _, file in ipairs(files) do
+    local name = vim.fn.fnamemodify(file, ":t:r")
+    local ext = vim.fn.fnamemodify(file, ":e")
+
+    if vim.tbl_contains(builtin_colorschemes, name) then
+      goto continue
+    end
+
+    if (ext == "vim" or ext == "lua") and name ~= vim.g.colors_name then
+      items[#items + 1] = {
+        text = name,
+        file = file,
+      }
+    end
+
+    ::continue::
+  end
+  return items
+end
+
+vim.keymap.del("n", "<leader>ft")
+map("n", "<leader>ft", function()
+  Snacks.picker.colorschemes({
+    finder = get_nvim_colorschemes,
+    format = "text",
+    preview = "none",
+    layout = {
+      preset = "right",
+      layout = {
+        height = 0.5,
+        width = 0.2,
+        min_width = 0,
+        anchor = "NE",
+        row = 0.5 - 0.25,
+        resize = true,
+        col = function()
+          return vim.o.columns
+        end,
+        position = "float",
+      },
+      hidden = { "preview" },
+    },
+    on_show = function(picker)
+      picker.preview.state.colorscheme = vim.g.colors_name
+    end,
+    on_change = function(picker, item)
+      if item then
+        vim.schedule(function()
+          vim.cmd("hi clear")
+          vim.cmd("colorscheme " .. item.text)
+        end)
+      end
+    end,
+    confirm = function(picker, item)
+      picker.preview.state.did_pick = true
+      picker:close()
+      -- if item then
+      --   vim.schedule(function()
+      --     vim.cmd("colorscheme " .. item.text)
+      --   end)
+      -- end
+    end,
+    on_close = function(picker)
+      if not picker.preview.state.did_pick then
+        vim.cmd("hi clear")
+        vim.cmd("colorscheme " .. picker.preview.state.colorscheme)
+      end
+    end,
+  })
+end, {
+  desc = "Find colorschemes (themes)",
 })

@@ -31,6 +31,9 @@ return {
           "json",
           "yaml",
           "toml",
+
+          -- shell
+          "nu",
         })
       end
     end,

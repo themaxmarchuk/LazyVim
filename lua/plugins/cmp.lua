@@ -1,44 +1,105 @@
 return {
-  "hrsh7th/nvim-cmp",
-  opts = function(_, opts)
-    local has_words_before = function()
-      unpack = unpack or table.unpack
-      local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-      return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-    end
-
-    local luasnip = require("luasnip")
-    local cmp = require("cmp")
-
-    opts.mapping = vim.tbl_extend("force", opts.mapping, {
-      ["<Tab>"] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          cmp.select_next_item()
-        -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
-        -- they way you will only jump inside the snippet region
-        elseif luasnip.expand_or_jumpable() then
-          luasnip.expand_or_jump()
-        elseif has_words_before() then
-          cmp.complete()
-        else
-          fallback()
-        end
-      end, { "i", "s" }),
-      ["<S-Tab>"] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          cmp.select_prev_item()
-        elseif luasnip.jumpable(-1) then
-          luasnip.jump(-1)
-        else
-          fallback()
-        end
-      end, { "i", "s" }),
-    })
-    -- Setup debouncing
-    -- opts.performance = {
-    --   debounce = 500,
-    --   throttle = 550,
-    --   fetching_timeout = 80,
-    -- }
-  end,
+  -- "hrsh7th/nvim-cmp",
+  -- -- dependencies = {
+  -- --   "hrsh7th/cmp-nvim-lsp-signature-help",
+  -- -- },
+  -- opts = function(_, opts)
+  --   local cmp = require("cmp")
+  --
+  --   opts.mapping = {
+  --     ["<C-k>"] = cmp.mapping.select_prev_item(),
+  --     ["<C-j>"] = cmp.mapping.select_next_item(),
+  --     ["<C-p>"] = cmp.mapping.select_prev_item(),
+  --     ["<C-n>"] = cmp.mapping.select_next_item(),
+  --     -- ["<C-n>"] = cmp.mapping {
+  --     --   i = function()
+  --     --     if cmp.visible() then
+  --     --       cmp.select_next_item()
+  --     --     else
+  --     --       cmp.complete()
+  --     --     end
+  --     --   end,
+  --     -- },
+  --     ["<M-k>"] = cmp.mapping.select_prev_item(),
+  --     ["<M-j>"] = cmp.mapping.select_next_item(),
+  --     ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+  --     ["<C-d>"] = cmp.mapping.scroll_docs(4),
+  --     -- ["<C-f>"] = nil, -- disabled default mapping.
+  --     ["<C-l>"] = cmp.mapping(function()
+  --       local luasnip = require("luasnip")
+  --       if luasnip.expand_or_locally_jumpable() then
+  --         luasnip.expand_or_jump()
+  --       end
+  --     end, { "i", "s" }),
+  --     ["<C-h>"] = cmp.mapping(function()
+  --       local luasnip = require("luasnip")
+  --       if luasnip.locally_jumpable(-1) then
+  --         luasnip.jump(-1)
+  --       end
+  --     end, { "i", "s" }),
+  --     ["<C-Space>"] = cmp.mapping.complete(),
+  --     ["<C-e>"] = cmp.mapping.close(),
+  --     ["<C-f>"] = cmp.mapping.close(),
+  --     ["<CR>"] = cmp.mapping(
+  --       cmp.mapping.confirm({
+  --         behavior = cmp.ConfirmBehavior.Insert,
+  --         select = true,
+  --       }),
+  --       { "i", "c" }
+  --     ),
+  --     ["<C-y>"] = cmp.mapping(
+  --       -- i = function()
+  --       --   if cmp.visible() then
+  --       --     cmp.confirm {
+  --       --       behavior = cmp.ConfirmBehavior.Insert,
+  --       --       select = true,
+  --       --     }
+  --       --   else
+  --       --     cmp.complete()
+  --       --     cmp.confirm {
+  --       --       behavior = cmp.ConfirmBehavior.Insert,
+  --       --       select = true,
+  --       --     }
+  --       --   end
+  --       -- end,
+  --       cmp.mapping.confirm({
+  --         behavior = cmp.ConfirmBehavior.Insert,
+  --         select = true,
+  --       }),
+  --       { "i" }
+  --     ),
+  --   }
+  --
+  --   -- opts.sources = cmp.config.sources {
+  --   --   -- defaults
+  --   --   {
+  --   --     name = "nvim_lsp",
+  --   --     priority = 1000,
+  --   --   },
+  --   --   { name = "luasnip",                 priority = 750 },
+  --   --   { name = "buffer",                  priority = 500 },
+  --   --   { name = "path",                    priority = 250 },
+  --   --   -- custom
+  --   --   { name = "nvim_lsp_signature_help", priority = 50 },
+  --   -- }
+  --
+  --   -- opts.performance = {
+  --   --   debounce = 500,
+  --   --   throttle = 550,
+  --   --   fetching_timeout = 80,
+  --   -- }
+  --
+  --   -- enable preselect
+  --   opts.preselect = cmp.PreselectMode.Item
+  --
+  --   opts.completion = {
+  --     completeopt = "menu,preview",
+  --     -- autocomplete = false,
+  --   }
+  --
+  --   -- restore default, so items name comes before type
+  --   opts.formatting.fields = { "abbr", "kind", }
+  --
+  --   return opts
+  -- end,
 }

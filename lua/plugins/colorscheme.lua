@@ -1,6 +1,16 @@
 return {
   -- -- add colorscheme
   {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "kanagawa-dragon",
+      -- colorscheme = "tokyonight-moon",
+      -- colorscheme = "solarized-osaka",
+      -- colorscheme = "eva01",
+      -- colorscheme = "terafox",
+    },
+  },
+  {
     "rebelot/kanagawa.nvim",
     config = function()
       require("kanagawa").setup({
@@ -11,16 +21,25 @@ return {
         keywordStyle = { italic = false },
         -- statementStyle = { bold = true },
         -- typeStyle = {},
-        -- transparent = false,   -- do not set background color
+        -- transparent = false, -- do not set background color
         -- dimInactive = false,   -- dim inactive window `:h hl-NormalNC`
         -- terminalColors = true, -- define vim.g.terminal_color_{0,17}
         -- colors = {             -- add/modify theme and palette colors
         --   palette = {},
         --   theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
         -- },
+
+        --- @diagnostic disable-next-line
         overrides = function(colors) -- add/modify highlights
           return {
             ["@variable.builtin"] = { italic = false },
+            ["@lsp.typemod.function.readonly"] = { bold = false },
+            ["@lsp.typemod.method.readonly.cpp"] = { link = "Function" },
+            -- ["@lsp.typemod.variable.readonly.cpp"] = { link = "@variable" },
+            ["@lsp.typemod.variable.functionScope.cpp"] = { link = "@variable" },
+            ["@lsp.typemod.type.deduced.cpp"] = { link = "Special" },
+            ["@lsp.typemod.class.deduced.cpp"] = { link = "Special" },
+            ["@lsp.typemod.enum.deduced.cpp"] = { link = "Special" },
           }
         end,
         -- theme = "wave",  -- Load "wave" theme when 'background' option is not set
@@ -28,18 +47,17 @@ return {
         --   dark = "wave", -- try "dragon" !
         --   light = "lotus",
         -- },
+        colors = {
+          theme = {
+            all = {
+              ui = {
+                bg_gutter = "none",
+              },
+            },
+          },
+        },
       })
     end,
-  },
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      -- colorscheme = "kanagawa",
-      -- colorscheme = "tokyonight-storm",
-      -- colorscheme = "solarized-osaka",
-      -- colorscheme = "nordic",
-      colorscheme = "terafox",
-    },
   },
   {
     "folke/tokyonight.nvim",
