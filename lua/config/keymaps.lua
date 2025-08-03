@@ -15,6 +15,14 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
+map("n", "n", "nzzzv", { desc = "Next Search Result" })
+map("n", "N", "Nzzzv", { desc = "Prev Search Result" })
+
+vim.keymap.del("n", "<S-H>")
+vim.keymap.del("n", "<S-L>")
+
 -- vim.o.shell = "cmd.exe /K %CMDER_ROOT%\\vendor\\bin\\vscode_init.cmd"
 local is_win = vim.fn.has("win32") == 1
 
@@ -30,27 +38,25 @@ function GTermExecute(cmd)
   end
 end
 
-if is_win then
-  map("n", "<M-i>", function()
-    GlobalTerminal = Snacks.terminal({
-      "nu",
-      -- "cmd.exe",
-      -- "/K",
-      -- "%CMDER_ROOT%\\vendor\\bin\\vscode_init.cmd",
-    }, {
-      cwd = Util.root(),
-    })
-  end, { desc = "Terminal (root dir)" })
-  map("t", "<M-i>", "<cmd>close<cr>", { desc = "Close terminal" })
-  map("n", "<leader>fT", function()
-    Snacks.terminal({
-      "nu",
-      -- "cmd.exe",
-      -- "/K",
-      -- "%CMDER_ROOT%\\vendor\\bin\\vscode_init.cmd",
-    })
-  end, { desc = "Terminal (cwd)" })
-end
+map("n", "<M-i>", function()
+  GlobalTerminal = Snacks.terminal({
+    "nu",
+    -- "cmd.exe",
+    -- "/K",
+    -- "%CMDER_ROOT%\\vendor\\bin\\vscode_init.cmd",
+  }, {
+    cwd = Util.root(),
+  })
+end, { desc = "Terminal (root dir)" })
+map("t", "<M-i>", "<cmd>close<cr>", { desc = "Close terminal" })
+map("n", "<leader>fT", function()
+  Snacks.terminal({
+    "nu",
+    -- "cmd.exe",
+    -- "/K",
+    -- "%CMDER_ROOT%\\vendor\\bin\\vscode_init.cmd",
+  })
+end, { desc = "Terminal (cwd)" })
 
 vim.keymap.del("n", "<leader>cf")
 map("n", "<M-f>", function()
@@ -103,10 +109,6 @@ local function get_nvim_colorschemes()
     text = vim.g.colors_name,
     file = "none",
   }
-  items[2] = {
-    text = "shitter7",
-    file = "none",
-  }
 
   for _, file in ipairs(files) do
     local name = vim.fn.fnamemodify(file, ":t:r")
@@ -134,6 +136,20 @@ map("n", "<leader>ft", function()
     finder = get_nvim_colorschemes,
     format = "text",
     preview = "none",
+    matcher = {
+      sort_empty = true,
+    },
+    sort = function(a, b)
+      if a.file == "none" then
+        return true
+      end
+
+      if b.file == "none" then
+        return false
+      end
+
+      return a.text < b.text
+    end,
     layout = {
       preset = "right",
       layout = {

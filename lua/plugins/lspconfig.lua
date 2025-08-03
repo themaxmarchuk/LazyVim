@@ -5,7 +5,7 @@ local is_win = vim.fn.has("win32") == 1
 return {
   "neovim/nvim-lspconfig",
   opts = {
-    doucment_highlight = {
+    document_highlight = {
       enabled = false,
     },
     servers = {

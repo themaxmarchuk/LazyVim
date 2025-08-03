@@ -5,15 +5,13 @@
 local is_win = vim.fn.has("win32") == 1
 
 if is_win then
-  vim.o.keywordprg = ":help"
+  -- vim.o.keywordprg = ":help"
   -- vim.o.shell = "cmd.exe /K %CMDER_ROOT%\\vendor\\bin\\vscode_init.cmd"
   vim.o.shell = "nu"
   vim.o.shellcmdflag = "-c"
   vim.o.shellquote = ""
   vim.o.shellxquote = ""
 end
-
-vim.o.list = false
 
 if vim.g.neovide then
   -- vim.api.nvim_set_option_value("guifont", "RobotoMono NF:h13.5", {})
@@ -57,3 +55,14 @@ vim.o.fileformats = "unix,dos"
 vim.o.cursorlineopt = "number"
 
 vim.g.snacks_animate = false
+vim.o.guicursor = "n-v-c:block-Cursor/lCursor,i-ci:ver25-Cursor/lCursor"
+
+vim.o.autowrite = false
+
+vim.o.statuscolumn = "%3l %s"
+
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
+
+vim.o.list = false

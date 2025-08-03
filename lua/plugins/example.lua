@@ -19,9 +19,14 @@ return {
     "folke/snacks.nvim",
     ---@type snacks.Config
     opts = {
-      -- statuscolumn = { enabled = false },
+      -- statuscolumn = {
+      --   enabled = true,
+      --   left = {},
+      --   right = { "sign", "git" },
+      -- },
       scope = { enabled = false },
       indent = { enabled = false },
+      words = { enabled = false },
     },
   },
   {

@@ -4,10 +4,6 @@ return {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "kanagawa-dragon",
-      -- colorscheme = "tokyonight-moon",
-      -- colorscheme = "solarized-osaka",
-      -- colorscheme = "eva01",
-      -- colorscheme = "terafox",
     },
   },
   {

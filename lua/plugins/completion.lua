@@ -8,13 +8,16 @@ return {
         nerd_font_variant = "normal",
       },
       completion = {
-        menu = {
-          draw = {
-            columns = {
-              { "label", "label_description", gap = 1 },
-              { "kind_icon", "kind" },
-            },
-          },
+        -- menu = {
+        --   draw = {
+        --     columns = {
+        --       { "label", "label_description", gap = 1 },
+        --       { "kind_icon", "kind" },
+        --     },
+        --   },
+        -- },
+        ghost_text = {
+          enabled = false,
         },
       },
       documentation = {
@@ -22,4 +25,11 @@ return {
       },
     },
   },
+  -- {
+  --   "saghen/blink.cmp",
+  --   opts = function(_, opts)
+  --     opts.sources.default = { "lsp", "path", "buffer" }
+  --     return opts
+  --   end,
+  -- },
 }
