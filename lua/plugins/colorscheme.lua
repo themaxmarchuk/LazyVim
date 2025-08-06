@@ -112,4 +112,25 @@ return {
     },
   },
   { "hachy/eva01.vim", lazy = true },
+  {
+    "tiagovla/tokyodark.nvim",
+    opts = {
+      transparent_background = false,
+      gamma = 1.00,
+      styles = {
+        comments = { italic = false },
+        keywords = { italic = false },
+        identifiers = { italic = false },
+        functions = {},
+        variables = {},
+      },
+      custom_highlights = {} or function(highlights, palette)
+        return {}
+      end,
+      custom_palette = {} or function(palette)
+        return {}
+      end,
+      terminal_colors = true,
+    },
+  },
 }

@@ -8,20 +8,20 @@ return {
         nerd_font_variant = "normal",
       },
       completion = {
-        -- menu = {
-        --   draw = {
-        --     columns = {
-        --       { "label", "label_description", gap = 1 },
-        --       { "kind_icon", "kind" },
-        --     },
-        --   },
-        -- },
+        documentation = {
+          treesitter_highlighting = true,
+        },
         ghost_text = {
           enabled = false,
         },
-      },
-      documentation = {
-        treesitter_highlighting = true,
+        menu = {
+          draw = {
+            columns = {
+              { "label", "label_description", gap = 1 },
+              { "kind_icon", "kind" },
+            },
+          },
+        },
       },
     },
   },

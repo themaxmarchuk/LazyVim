@@ -17,13 +17,15 @@ if vim.g.neovide then
   -- vim.api.nvim_set_option_value("guifont", "RobotoMono NF:h13.5", {})
   -- vim.api.nvim_set_option_value("guifont", "JetBrainsMono_Nerd_Font:h13.5:#e-subpixelantialias:#h-full:w-0.5", {})
   -- vim.api.nvim_set_option_value("linespace", -3, {})
-  vim.api.nvim_set_option_value("guifont", "BerkeleyMono_Nerd_Font:h13.5:#e-subpixelantialias:#h-full:w-0.5", {})
+  -- vim.api.nvim_set_option_value("guifont", "BerkeleyMono_Nerd_Font:h13.5:#e-subpixelantialias:#h-full:w-0.5", {})
   vim.api.nvim_set_option_value("linespace", -1, {})
   vim.g.neovide_refresh_rate = 144
   vim.g.neovide_cursor_trail_length = 0.05
   vim.g.neovide_cursor_antialiasing = true
   vim.g.neovide_scroll_animation_length = 0.0
   -- vim.g.neovide_cursor_animation_length = 0.03 -- default is 0.06
+  -- vim.g.neovide_cursor_animation_length = 0 -- instant cursor movement
+  vim.g.neovide_cursor_animation_length = 0.01
 
   -- basic railgun setup: railgun from nvimdots github
   -- vim.g.neovide_cursor_vfx_mode = "railgun"
@@ -38,6 +40,24 @@ if vim.g.neovide then
   vim.g.neovide_cursor_vfx_particle_density = 32
   vim.g.neovide_cursor_vfx_particle_lifetime = 5
   vim.g.neovide_cursor_vfx_particle_speed = 20
+
+  -- NEW SECTION
+  vim.g.neovide_floating_shadow = false
+  vim.g.neovide_floating_blur = false
+  -- vim.g.neovide_position_animation_length = 0
+  -- vim.g.neovide_text_contrast = 0.1
+  -- vim.g.neovide_text_gamma = 0.8
+
+  vim.keymap.set({ "n", "v", "i", "c" }, "<F11>", function()
+    if vim.g.neovide_fullscreen == 1 then
+      vim.g.neovide_fullscreen = 0
+    else
+      vim.g.neovide_fullscreen = 1
+    end
+  end)
+
+  vim.g.neovide_cursor_vfx_particle_density = 0
+  -- NEW SECTION
 
   -- resize with alt + and alt - and reset with alt 0
   vim.keymap.set("n", "<M-=>", function()
