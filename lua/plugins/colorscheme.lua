@@ -9,7 +9,9 @@ return {
   {
     "rebelot/kanagawa.nvim",
     config = function()
+      local dragon = require("kanagawa.colors").setup({ theme = "dragon" })
       require("kanagawa").setup({
+        compile = true,
         -- compile = false,  -- enable compiling the colorscheme
         -- undercurl = true, -- enable undercurls
         commentStyle = { italic = false },
@@ -45,6 +47,11 @@ return {
         -- },
         colors = {
           theme = {
+            dragon = {
+              ui = {
+                bg = dragon.palette.dragonBlack0,
+              },
+            },
             all = {
               ui = {
                 bg_gutter = "none",
@@ -108,6 +115,48 @@ return {
   },
   { "hachy/eva01.vim" },
   {
+    "slugbyte/lackluster.nvim",
+  },
+  {
+    "rjshkhr/shadow.nvim",
+  },
+  {
+    "ferdinandrau/carbide.nvim",
+  },
+  {
+    "sainnhe/everforest",
+    config = function()
+      vim.g.everforest_background = "hard"
+      vim.g.everforest_disable_italic_comment = 1
+    end,
+  },
+  {
+    "everviolet/nvim",
+    name = "evergarden",
+    opts = {
+      style = {
+        search = {},
+        types = {},
+        keyword = {},
+        comment = {},
+      },
+    },
+  },
+  {
+    "ribru17/bamboo.nvim",
+    opts = {
+      code_style = {
+        comments = { italic = false },
+        conditionals = { italic = false },
+        namespaces = { italic = false },
+        parameters = { italic = false },
+      },
+      highlights = {
+        ["@keyword.modifier"] = { link = "Keyword" },
+      },
+    },
+  },
+  {
     "tiagovla/tokyodark.nvim",
     opts = {
       transparent_background = false,
@@ -127,5 +176,15 @@ return {
       end,
       terminal_colors = true,
     },
+  },
+  {
+    "nickkadutskyi/jb.nvim",
+    config = function()
+      require("jb").setup({
+        disable_hl_args = {
+          italic = true,
+        },
+      })
+    end,
   },
 }
