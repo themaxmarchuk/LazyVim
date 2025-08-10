@@ -66,11 +66,9 @@ return {
   },
   {
     "nyoom-engineering/oxocarbon.nvim",
-    lazy = true,
   },
   {
     "craftzdog/solarized-osaka.nvim",
-    lazy = true,
     config = function()
       require("solarized-osaka").setup({
         transparent = false,
@@ -93,25 +91,22 @@ return {
   },
   {
     "andersevenrud/nordic.nvim",
-    lazy = true,
     config = function()
       vim.g.nord_italic = false
     end,
   },
   {
     "EdenEast/nightfox.nvim",
-    lazy = true,
   },
   {
     "themaxmarchuk/grail",
     dir = "C:\\Users\\Max\\dev\\grail",
-    lazy = true,
     opts = {
       italics = false,
       disable_italic_comments = true,
     },
   },
-  { "hachy/eva01.vim", lazy = true },
+  { "hachy/eva01.vim" },
   {
     "tiagovla/tokyodark.nvim",
     opts = {
