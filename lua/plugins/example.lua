@@ -3,6 +3,21 @@ return {
     "folke/flash.nvim",
     enabled = false,
   },
+  {
+    "shortcuts/no-neck-pain.nvim",
+    opts = {
+      width = 120,
+    },
+    cmd = {
+      "NoNeckPain",
+      "NoNeckPainResize",
+      "NoNeckPainToggleLeftSide",
+      "NoNeckPainToggleRightSide",
+      "NoNeckPainWidthUp",
+      "NoNeckPainWidthDown",
+      "NoNeckPainScratchPad",
+    },
+  },
   -- {
   --   "folke/noice.nvim",
   --   enabled = false,
