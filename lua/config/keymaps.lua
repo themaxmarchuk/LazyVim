@@ -23,6 +23,9 @@ map("n", "N", "Nzzzv", { desc = "Prev Search Result" })
 vim.keymap.del("n", "<S-H>")
 vim.keymap.del("n", "<S-L>")
 
+vim.keymap.del("n", "<M-j>")
+vim.keymap.del("n", "<M-k>")
+
 -- vim.o.shell = "cmd.exe /K %CMDER_ROOT%\\vendor\\bin\\vscode_init.cmd"
 local is_win = vim.fn.has("win32") == 1
 
