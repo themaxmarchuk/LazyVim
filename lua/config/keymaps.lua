@@ -42,24 +42,17 @@ function GTermExecute(cmd)
 end
 
 map("n", "<M-i>", function()
-  GlobalTerminal = Snacks.terminal({
-    "nu",
-    -- "cmd.exe",
-    -- "/K",
-    -- "%CMDER_ROOT%\\vendor\\bin\\vscode_init.cmd",
-  }, {
-    cwd = Util.root(),
-  })
+  GlobalTerminal = Snacks.terminal("nu", { cwd = Util.root(), win = { border = "rounded", backdrop = false } })
+  -- GlobalTerminal = Snacks.terminal({
+  --   "nu",
+  --   -- "cmd.exe",
+  --   -- "/K",
+  --   -- "%CMDER_ROOT%\\vendor\\bin\\vscode_init.cmd",
+  -- }, {
+  --   cwd = Util.root(),
+  -- })
 end, { desc = "Terminal (root dir)" })
 map("t", "<M-i>", "<cmd>close<cr>", { desc = "Close terminal" })
-map("n", "<leader>fT", function()
-  Snacks.terminal({
-    "nu",
-    -- "cmd.exe",
-    -- "/K",
-    -- "%CMDER_ROOT%\\vendor\\bin\\vscode_init.cmd",
-  })
-end, { desc = "Terminal (cwd)" })
 
 vim.keymap.del("n", "<leader>cf")
 map("n", "<M-f>", function()
