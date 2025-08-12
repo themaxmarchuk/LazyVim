@@ -3,7 +3,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "kanagawa-dragon",
+      colorscheme = "evergarden",
     },
   },
   {
@@ -134,6 +134,9 @@ return {
     "everviolet/nvim",
     name = "evergarden",
     opts = {
+      theme = {
+        variant = "spring",
+      },
       style = {
         search = {},
         types = {},
