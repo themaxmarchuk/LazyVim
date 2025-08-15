@@ -107,7 +107,6 @@ return {
   },
   {
     "themaxmarchuk/grail",
-    dir = "C:\\Users\\Max\\dev\\grail",
     opts = {
       italics = false,
       disable_italic_comments = true,
