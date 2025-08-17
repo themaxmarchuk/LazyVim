@@ -96,6 +96,7 @@ return {
       })
     end,
   },
+  -- TODO: resolve the conflict here...
   {
     "andersevenrud/nordic.nvim",
     config = function()
@@ -189,4 +190,112 @@ return {
       })
     end,
   },
+  { "RostislavArts/naysayer.nvim" },
+  { "Mofiqul/dracula.nvim" },
+  { "DeaDWTeaM/retrolegends.nvim" },
+  { "ptdewey/monalisa-nvim" },
+  { "shmerl/neogotham" },
+  { "projekt0n/github-nvim-theme" },
+  { "tlhr/anderson.vim" },
+  { "sample-usr/rakis.nvim" },
+  { "axvr/raider.vim" },
+  { "xero/miasma.nvim" },
+  { "rombrom/fansi2" },
+  { "antonk52/lake.nvim" },
+  { "Vallen217/eidolon.nvim" },
+  { "ficcdaf/ashen.nvim" },
+  { "koron/vim-monochromenote" },
+  { "bettervim/yugen.nvim" },
+  { "yorumicolors/yorumi.nvim" },
+  { "F4LCn/tasogare.nvim" },
+  { "amedoeyes/eyes.nvim" },
+  { "ttak0422/morimo" },
+  { "Rigellute/rigel" },
+  { "themaxmarchuk/oak" },
+  { "nvimdev/nightsky.vim" },
+  { "gmr458/cold.nvim" },
+  { "mcauley-penney/ice-cave.nvim" },
+  {
+    "blazkowolf/gruber-darker.nvim",
+    opts = {
+      italic = {
+        strings = false,
+        comments = false,
+        operators = false,
+        folds = false,
+      },
+    },
+  },
+  { "mhartington/oceanic-next" },
+  { "DryLabRebel/Squire" },
+  { "aonemd/kuroi.vim" },
+  { "Daiki48/sakurajima.nvim" },
+  { "srcery-colors/srcery-vim" },
+  { "ronisbr/nano-theme.nvim" },
+  { "xiantang/darcula-dark.nvim" },
+  {
+    "olivercederborg/poimandres.nvim",
+    config = function()
+      require("poimandres").setup({
+        disable_italics = true,
+      })
+    end,
+  },
+  {
+    "mcchrish/zenbones.nvim",
+    dependencies = {
+      "rktjmp/lush.nvim",
+    },
+  },
+  {
+    "kvrohit/substrata.nvim",
+    config = function()
+      vim.g.substrata_italic_comments = false
+    end,
+  },
+  { "NTBBloodbath/doom-one.nvim" },
+  { "fenetikm/falcon" },
+  {
+    "HoNamDuong/hybrid.nvim",
+    opts = { italic = { comments = false } },
+  },
+  { "Th3Whit3Wolf/space-nvim" },
+  { "pineapplegiant/spaceduck" },
+  {
+    "savq/melange-nvim",
+    config = function()
+      vim.g.melange_enable_font_variants = false
+    end,
+  },
+  {
+    "bluz71/vim-moonfly-colors",
+    name = "moonfly",
+    config = function()
+      vim.g.moonflyItalics = false
+    end,
+  },
+  {
+    "bluz71/vim-nightfly-colors",
+    name = "nightfly",
+    config = function()
+      vim.g.nightflyItalics = false
+    end,
+  },
+  {
+    "kepano/flexoki-neovim",
+    name = "flexoki",
+  },
+  { "RRethy/nvim-base16" },
+  { "fcpg/vim-fahrenheit" },
+  {
+    "rose-pine/neovim",
+    opts = { styles = { italic = false } },
+  },
+  {
+    "gbprod/nord.nvim",
+    opts = { styles = { comments = { italic = false } } },
+  },
+  { "oahlen/iceberg.nvim" },
+  { "uloco/bluloco.nvim" },
+  { "xero/miasma.nvim" },
 }
