@@ -42,7 +42,7 @@ function GTermExecute(cmd)
 end
 
 map("n", "<M-i>", function()
-  GlobalTerminal = Snacks.terminal("nu", { cwd = Util.root(), win = { border = "rounded", backdrop = false } })
+  GlobalTerminal = Snacks.terminal("nu", { win = { border = "rounded", backdrop = false } })
   -- GlobalTerminal = Snacks.terminal({
   --   "nu",
   --   -- "cmd.exe",
