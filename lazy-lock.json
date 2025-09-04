@@ -76,6 +76,7 @@
   "poimandres.nvim": { "branch": "main", "commit": "a488957d803943a4201ac3b774913fcafa9e6b3a" },
   "raider.vim": { "branch": "master", "commit": "9c0e9e618829445a4a4ccb3bf5f9cdf5f8fec7b7" },
   "rakis.nvim": { "branch": "main", "commit": "daa03bee7416e1069cd59a2189d9b725a2c13643" },
+  "render-markdown.nvim": { "branch": "main", "commit": "c4ff9acddcf0f79b3187393319adb5cac5865bd3" },
   "retrolegends.nvim": { "branch": "main", "commit": "2fa8dbd9120a7a42fac6bef94d79f913e5efe8c1" },
   "rigel": { "branch": "master", "commit": "d5b881432f5f243d3880e659437030930781f9a4" },
   "sakurajima.nvim": { "branch": "main", "commit": "467e787c6f9c5a48ef94a48c5b925632130bef28" },

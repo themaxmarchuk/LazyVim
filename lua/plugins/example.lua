@@ -4,6 +4,14 @@ return {
     enabled = false,
   },
   {
+    "MeanderingProgrammer/render-markdown.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
+    ft = "markdown",
+  },
+  {
     "shortcuts/no-neck-pain.nvim",
     opts = {
       width = 120,
