@@ -3,7 +3,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "evergarden",
+      colorscheme = "eva01",
     },
   },
   {
@@ -47,11 +47,11 @@ return {
         -- },
         colors = {
           theme = {
-            dragon = {
-              ui = {
-                bg = dragon.palette.dragonBlack0,
-              },
-            },
+            -- dragon = {
+            --   ui = {
+            --     bg = dragon.palette.dragonBlack0,
+            --   },
+            -- },
             all = {
               ui = {
                 bg_gutter = "none",
@@ -194,7 +194,7 @@ return {
   { "Mofiqul/dracula.nvim" },
   { "DeaDWTeaM/retrolegends.nvim" },
   { "ptdewey/monalisa-nvim" },
-  { "shmerl/neogotham" },
+  { "https://gitlab.com/shmerl/neogotham.git" },
   { "projekt0n/github-nvim-theme" },
   { "tlhr/anderson.vim" },
   { "sample-usr/rakis.nvim" },
@@ -285,10 +285,11 @@ return {
     "kepano/flexoki-neovim",
     name = "flexoki",
   },
-  { "RRethy/nvim-base16" },
+  -- { "RRethy/nvim-base16" },
   { "fcpg/vim-fahrenheit" },
   {
     "rose-pine/neovim",
+    name = "rose-pine",
     opts = { styles = { italic = false } },
   },
   {
@@ -298,4 +299,20 @@ return {
   { "oahlen/iceberg.nvim" },
   { "uloco/bluloco.nvim" },
   { "xero/miasma.nvim" },
+  { "LuxVim/lux.nvim" },
+  { "josstei/voidpulse.nvim" },
+  { "sonidori98/parsee.nvim" },
+  { "lucasadelino/conifer.nvim" },
+  { "KimJBaran/voyager.nvim" },
+  { "BusinessJoe/bluemarble.nvim" },
+  { "Daiki48/coolnessFlair.vim" },
+  {
+    "heavycircle/ronin.nvim",
+    opts = {
+      styles = {
+        comments = { italic = false },
+        keywords = { italic = false },
+      },
+    },
+  },
 }
