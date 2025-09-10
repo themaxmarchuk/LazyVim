@@ -3,7 +3,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "eva01",
+      colorscheme = "retrolegends",
     },
   },
   {
@@ -47,11 +47,11 @@ return {
         -- },
         colors = {
           theme = {
-            -- dragon = {
-            --   ui = {
-            --     bg = dragon.palette.dragonBlack0,
-            --   },
-            -- },
+            dragon = {
+              ui = {
+                bg = dragon.palette.dragonBlack0,
+              },
+            },
             all = {
               ui = {
                 bg_gutter = "none",
@@ -312,6 +312,18 @@ return {
       styles = {
         comments = { italic = false },
         keywords = { italic = false },
+      },
+    },
+  },
+  { "ericdwhite/overtones.nvim" },
+  {
+    "hyperb1iss/silkcircuit-nvim",
+    name = "silkcircuit",
+    opts = {
+      styles = {
+        comments = { italic = false },
+        functions = { bold = true, italic = false },
+        strings = { italic = false },
       },
     },
   },
