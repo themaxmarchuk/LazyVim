@@ -2,6 +2,8 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+local is_win = vim.fn.has("win32") == 1
+
 local Util = require("lazyvim.util")
 
 local function map(mode, lhs, rhs, opts)
@@ -20,6 +22,22 @@ map("n", "<C-u>", "<C-u>zz")
 map("n", "n", "nzzzv", { desc = "Next Search Result" })
 map("n", "N", "Nzzzv", { desc = "Prev Search Result" })
 
+local odin_path
+
+if is_win then
+  odin_path = "C:\\Users\\Max\\Odin\\"
+else
+  odin_path = "/home/max/dev/Odin/"
+end
+
+map("n", "<leader>so", function()
+  Snacks.picker.grep({ dirs = { odin_path .. "base", odin_path .. "core", odin_path .. "vendor" }, glob = "*.odin" })
+end, { desc = "Search (grep) odin base/core/vendor code" })
+
+map("n", "<leader>fo", function()
+  Snacks.picker.files({ cwd = odin_path, dirs = { "base", "core", "vendor" }, ft = "odin", args = { "-a" } })
+end, { desc = "Find odin base/core/vendor files" })
+
 vim.keymap.del("n", "<S-H>")
 vim.keymap.del("n", "<S-L>")
 
@@ -27,7 +45,6 @@ vim.keymap.del("n", "<M-j>")
 vim.keymap.del("n", "<M-k>")
 
 -- vim.o.shell = "cmd.exe /K %CMDER_ROOT%\\vendor\\bin\\vscode_init.cmd"
-local is_win = vim.fn.has("win32") == 1
 
 GlobalTerminal = nil --- @type snacks.win
 
