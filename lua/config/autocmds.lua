@@ -8,3 +8,15 @@
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 
 vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+
+local function augroup(name)
+  return vim.api.nvim_create_augroup(name, { clear = true })
+end
+
+vim.api.nvim_create_autocmd("FileType", {
+  group = augroup("spell"),
+  pattern = { "gitcommit" },
+  callback = function()
+    vim.opt_local.spell = true
+  end,
+})
