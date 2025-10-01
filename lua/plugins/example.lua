@@ -26,14 +26,14 @@ return {
       "NoNeckPainScratchPad",
     },
   },
-  {
-    "stevearc/conform.nvim",
-    opts = {
-      formatters_by_ft = {
-        odin = { "odinfmt" },
-      },
-    },
-  },
+  -- {
+  --   "stevearc/conform.nvim",
+  --   opts = {
+  --     formatters_by_ft = {
+  --       odin = { "odinfmt" },
+  --     },
+  --   },
+  -- },
   -- {
   --   "folke/noice.nvim",
   --   enabled = false,
