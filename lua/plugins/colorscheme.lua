@@ -3,7 +3,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyodark",
+      colorscheme = "evergarden",
     },
   },
   {
@@ -135,7 +135,7 @@ return {
     name = "evergarden",
     opts = {
       theme = {
-        variant = "spring",
+        variant = "fall",
       },
       style = {
         search = {},
@@ -302,7 +302,7 @@ return {
   { "LuxVim/lux.nvim" },
   { "josstei/voidpulse.nvim" },
   { "sonidori98/parsee.nvim" },
-  { "lucasadelino/conifer.nvim" },
+  { "lucasadelino/conifer.nvim", opts = {} },
   { "KimJBaran/voyager.nvim" },
   { "BusinessJoe/bluemarble.nvim" },
   { "Daiki48/coolnessFlair.vim" },
@@ -327,4 +327,5 @@ return {
       },
     },
   },
+  { "rasa-silva/sliver.nvim" },
 }
