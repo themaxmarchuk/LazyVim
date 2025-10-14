@@ -3,7 +3,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyodark",
+      colorscheme = "evergarden",
     },
   },
   {
@@ -47,11 +47,11 @@ return {
         -- },
         colors = {
           theme = {
-            dragon = {
-              ui = {
-                bg = dragon.palette.dragonBlack0,
-              },
-            },
+            -- dragon = {
+            --   ui = {
+            --     bg = dragon.palette.dragonBlack0,
+            --   },
+            -- },
             all = {
               ui = {
                 bg_gutter = "none",
@@ -135,7 +135,7 @@ return {
     name = "evergarden",
     opts = {
       theme = {
-        variant = "spring",
+        variant = "fall",
       },
       style = {
         search = {},
@@ -327,4 +327,5 @@ return {
       },
     },
   },
+  { "rasa-silva/sliver.nvim" },
 }
