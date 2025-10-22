@@ -47,11 +47,11 @@ return {
         -- },
         colors = {
           theme = {
-            dragon = {
-              ui = {
-                bg = dragon.palette.dragonBlack0,
-              },
-            },
+            -- dragon = {
+            --   ui = {
+            --     bg = dragon.palette.dragonBlack0,
+            --   },
+            -- },
             all = {
               ui = {
                 bg_gutter = "none",
@@ -302,7 +302,7 @@ return {
   { "LuxVim/lux.nvim" },
   { "josstei/voidpulse.nvim" },
   { "sonidori98/parsee.nvim" },
-  { "lucasadelino/conifer.nvim", opts = {} },
+  { "lucasadelino/conifer.nvim" },
   { "KimJBaran/voyager.nvim" },
   { "BusinessJoe/bluemarble.nvim" },
   { "Daiki48/coolnessFlair.vim" },
