@@ -3,7 +3,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "evergarden",
+      colorscheme = "yoda",
     },
   },
   {
@@ -328,4 +328,5 @@ return {
     },
   },
   { "rasa-silva/sliver.nvim" },
+  { "kuri-sun/yoda.nvim", opts = { italic_comments = false } },
 }
