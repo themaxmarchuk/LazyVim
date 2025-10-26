@@ -106,6 +106,7 @@
   "voidpulse.nvim": { "branch": "main", "commit": "bdc483bb97f1042369de8a81728a18b61501d70e" },
   "voyager.nvim": { "branch": "main", "commit": "fc4d25950f2169b88a562adb831a27dc37350a0a" },
   "which-key.nvim": { "branch": "main", "commit": "b4177e3eaf15fe5eb8357ebac2286d488be1ed00" },
+  "yoda.nvim": { "branch": "main", "commit": "710628761b28af75e1bd5f87a8330f0b787b803c" },
   "yorumi.nvim": { "branch": "main", "commit": "0d0c995ecb90cd21e701fd30b7c5e794cb1e41ce" },
   "yugen.nvim": { "branch": "main", "commit": "cfd97621c2f724443346ae841facaf4e00410e5a" },
   "zenbones.nvim": { "branch": "main", "commit": "a934bc07d2ed4a98b74526c172d7f043736d8935" }

@@ -328,4 +328,5 @@ return {
     },
   },
   { "rasa-silva/sliver.nvim" },
+  { "kuri-sun/yoda.nvim", opts = { italic_comments = false } },
 }
