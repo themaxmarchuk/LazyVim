@@ -135,7 +135,7 @@ return {
     name = "evergarden",
     opts = {
       theme = {
-        variant = "fall",
+        variant = "spring",
       },
       style = {
         search = {},
@@ -190,9 +190,8 @@ return {
       })
     end,
   },
-  { "RostislavArts/naysayer.nvim" },
   { "Mofiqul/dracula.nvim" },
-  { "DeaDWTeaM/retrolegends.nvim" },
+  { "maxmx03/retrolegends.nvim" },
   { "ptdewey/monalisa-nvim" },
   { "https://gitlab.com/shmerl/neogotham.git" },
   { "projekt0n/github-nvim-theme" },
@@ -329,4 +328,11 @@ return {
   },
   { "rasa-silva/sliver.nvim" },
   { "kuri-sun/yoda.nvim", opts = { italic_comments = false } },
+  { "y9san9/y9nika.nvim" },
+  { "uhs-robert/oasis.nvim" },
+  -- new colors here (not sure if I want to keep them)
+  { "Pearljak/terracotta.nvim" },
+  { "aidyak/tokusa" },
+  { "masisz/wisteria.nvim" },
+  { "ATTron/bebop.nvim" },
 }
