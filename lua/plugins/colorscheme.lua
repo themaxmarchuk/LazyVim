@@ -335,4 +335,20 @@ return {
   { "aidyak/tokusa" },
   { "masisz/wisteria.nvim" },
   { "ATTron/bebop.nvim" },
+  {
+    "kungfusheep/mfd.nvim",
+    opts = {
+      bright_comments = true,
+    },
+  },
+  {
+    "jpwol/thorn.nvim",
+    opts = {
+      styles = {
+        keywords = { italic = false, bold = false },
+        comments = { italic = false, bold = false },
+        strings = { italic = false, bold = false },
+      },
+    },
+  },
 }
