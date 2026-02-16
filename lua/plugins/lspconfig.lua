@@ -9,9 +9,31 @@ return {
       enabled = false,
     },
     servers = {
+      gopls = { mason = false },
       gdscript = {},
       rust_analyzer = {},
       ols = { mason = false },
+      svelte = {
+        settings = {
+          emmet = {
+            showExpandedAbbreviation = "never",
+          },
+          svelte = {
+            plugin = {
+              css = {
+                completions = {
+                  emmet = false,
+                },
+              },
+              html = {
+                completions = {
+                  emmet = false,
+                },
+              },
+            },
+          },
+        },
+      },
     },
     -- setup = {
     --   gdscript = function(_, opts)
