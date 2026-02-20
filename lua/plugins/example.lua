@@ -6,7 +6,7 @@ return {
   {
     "MeanderingProgrammer/render-markdown.nvim",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
-    ---@module 'render-markdown'
+    ---@module "render-markdown"
     ---@type render.md.UserConfig
     opts = {},
     ft = "markdown",
@@ -34,10 +34,17 @@ return {
   --     },
   --   },
   -- },
-  -- {
-  --   "folke/noice.nvim",
-  --   enabled = false,
-  -- },
+  {
+    "folke/noice.nvim",
+    -- enabled = false,
+    ---@module "noice"
+    ---@type NoiceConfig
+    opts = {
+      cmdline = {
+        view = "cmdline",
+      },
+    },
+  },
   -- {
   --   "nvim-lualine/lualine.nvim",
   --   enabled = false,
@@ -56,6 +63,7 @@ return {
   },
   {
     "folke/snacks.nvim",
+    ---@module "snacks"
     ---@type snacks.Config
     opts = {
       -- statuscolumn = {
