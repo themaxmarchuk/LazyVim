@@ -1,9 +1,11 @@
+local saved_color_exists, colorscheme = pcall(require, "color")
+
 return {
   -- -- add colorscheme
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "yoda",
+      colorscheme = saved_color_exists and colorscheme or "yoda",
     },
   },
   {

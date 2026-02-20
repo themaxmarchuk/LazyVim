@@ -193,11 +193,25 @@ map("n", "<leader>ft", function()
     confirm = function(picker, item)
       picker.preview.state.did_pick = true
       picker:close()
-      -- if item then
-      --   vim.schedule(function()
-      --     vim.cmd("colorscheme " .. item.text)
-      --   end)
-      -- end
+
+      if item then
+        local data_dir = vim.fn.stdpath("data") .. "/site/lua"
+        local file_path = data_dir .. "/color.lua"
+
+        if vim.fn.isdirectory(data_dir) == 0 then
+          vim.fn.mkdir(data_dir, "p")
+        end
+
+        local file, err, code = io.open(file_path, "w")
+        if not file then
+          vim.notify("Error: " .. err .. " with code (" .. code .. ")", vim.log.levels.ERROR)
+        else
+          file:write("return '" .. item.text .. "'")
+          file:close()
+
+          vim.notify("Saved colorscheme: " .. item.text, vim.log.levels.INFO)
+        end
+      end
     end,
     on_close = function(picker)
       if not picker.preview.state.did_pick then
@@ -209,3 +223,16 @@ map("n", "<leader>ft", function()
 end, {
   desc = "Find colorschemes (themes)",
 })
+
+vim.api.nvim_create_user_command("ClearSavedColorscheme", function()
+  local file_path = vim.fn.stdpath("data") .. "/site/lua/color.lua"
+  if vim.fn.filereadable(file_path) == 1 then
+    if vim.fn.delete(file_path) == 0 then
+      vim.notify("Cleared saved colorscheme", vim.log.levels.INFO)
+    else
+      vim.notify("Failed to clear saved colorscheme: delete operation failed", vim.log.levels.ERROR)
+    end
+  else
+    vim.notify("No saved colorscheme exists", vim.log.levels.INFO)
+  end
+end, { desc = "Clears the saved colorscheme file" })
