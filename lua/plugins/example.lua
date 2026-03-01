@@ -1,3 +1,5 @@
+local time_format = (vim.fn.has("win32") == 1 and "%#I" or "%-I") .. ":%M %p"
+
 return {
   {
     "folke/flash.nvim",
@@ -80,6 +82,18 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       inlay_hints = { enabled = false },
+    },
+  },
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = {
+      sections = {
+        lualine_z = {
+          function()
+            return " " .. os.date(time_format)
+          end,
+        },
+      },
     },
   },
 }
