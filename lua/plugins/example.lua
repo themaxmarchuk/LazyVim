@@ -29,13 +29,23 @@ return {
     },
   },
   -- {
-  --   "stevearc/conform.nvim",
+  --   "mfussenegger/nvim-lint",
   --   opts = {
-  --     formatters_by_ft = {
-  --       odin = { "odinfmt" },
+  --     linters_by_ft = {
+  --       typescriptreact = { "oxlint" },
   --     },
   --   },
   -- },
+  {
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        typescriptreact = { "oxfmt" },
+        -- typescript = { "oxfmt" },
+        -- odin = { "odinfmt" },
+      },
+    },
+  },
   {
     "folke/noice.nvim",
     -- enabled = false,
