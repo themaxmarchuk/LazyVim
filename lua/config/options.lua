@@ -86,3 +86,5 @@ vim.o.shiftwidth = 4
 vim.o.expandtab = true
 
 vim.o.list = false
+
+vim.hl.priorities.semantic_tokens = 95
