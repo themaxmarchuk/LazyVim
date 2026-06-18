@@ -354,4 +354,76 @@ return {
       },
     },
   },
+  -- another new colorscheme section
+  {
+    "ember-theme/nvim",
+    name = "ember",
+  },
+  {
+    "thallada/farout.nvim",
+    opts = {
+      styles = {
+        comments = { italic = false },
+      },
+    },
+  },
+  {
+    "zitrocode/carvion.nvim",
+    opts = {
+      styles = {
+        comments = { italic = false },
+      },
+    },
+  },
+  { "0x-ximon/acario.nvim" },
+  -- **
+  {
+    "aidyak/hitotose.nvim",
+    opts = {
+      on_highlights = function(hl, c)
+        hl.Comment = { fg = c.comment, italic = false }
+        hl["@comment"] = { fg = c.comment, italic = false }
+      end,
+    },
+  },
+  { "metalelf0/kintsugi-nvim" },
+  -- **
+  {
+    "widnyana/vividphantom.nvim",
+    opts = {
+      italic_comments = false,
+    },
+  },
+  { "meanybeany420/the_bean_theme.nvim" },
+  -- **
+  { "jpetrie/turnip" },
+  { "SanzharKuandyk/nagisa.nvim" },
+  -- **
+  { "thekylehuang/cole.nvim" },
+  -- **
+  { "dgrco/deepspace.nvim" },
+  { "yuttie/hydrangea-nvim" },
+  { "barrettruth/midnight.nvim" },
+  {
+    "sageveil/nvim",
+    name = "sageveil",
+    opts = {
+      style = {
+        italic = false,
+      },
+    },
+  },
+  -- **
+  { "wu-json/yuki.nvim" },
+  {
+    "tichelmorres/konosuba.nvim",
+    opts = {
+      italic = {
+        strings = false,
+        comments = false,
+      },
+    },
+  },
+  { "SomeCoder99/darkslate.nvim" },
+  -- TODO: prune colorschemes in general. only keep the ones you like
 }
