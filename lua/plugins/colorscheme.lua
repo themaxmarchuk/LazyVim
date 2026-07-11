@@ -75,6 +75,7 @@ return {
   },
   {
     "nyoom-engineering/oxocarbon.nvim",
+    build = false,
   },
   {
     "craftzdog/solarized-osaka.nvim",
@@ -396,7 +397,6 @@ return {
   },
   { "meanybeany420/the_bean_theme.nvim" },
   -- **
-  { "jpetrie/turnip" },
   { "SanzharKuandyk/nagisa.nvim" },
   -- **
   { "thekylehuang/cole.nvim" },
@@ -415,15 +415,6 @@ return {
   },
   -- **
   { "wu-json/yuki.nvim" },
-  {
-    "tichelmorres/konosuba.nvim",
-    opts = {
-      italic = {
-        strings = false,
-        comments = false,
-      },
-    },
-  },
   { "SomeCoder99/darkslate.nvim" },
   -- TODO: prune colorschemes in general. only keep the ones you like
 }
