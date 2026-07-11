@@ -75,6 +75,7 @@ return {
   },
   {
     "nyoom-engineering/oxocarbon.nvim",
+    build = false,
   },
   {
     "craftzdog/solarized-osaka.nvim",
