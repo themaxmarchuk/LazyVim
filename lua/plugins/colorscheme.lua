@@ -416,15 +416,6 @@ return {
   },
   -- **
   { "wu-json/yuki.nvim" },
-  {
-    "tichelmorres/konosuba.nvim",
-    opts = {
-      italic = {
-        strings = false,
-        comments = false,
-      },
-    },
-  },
   { "SomeCoder99/darkslate.nvim" },
   -- TODO: prune colorschemes in general. only keep the ones you like
 }
