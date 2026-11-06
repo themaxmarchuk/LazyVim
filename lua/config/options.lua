@@ -44,6 +44,10 @@ if vim.g.neovide then
   -- NEW SECTION
   vim.g.neovide_floating_shadow = false
   vim.g.neovide_floating_blur = false
+  vim.g.neovide_floating_blur_amount_x = 0.0
+  vim.g.neovide_floating_blur_amount_y = 0.0
+  vim.g.neovide_progress_bar_enabled = false
+
   -- vim.g.neovide_position_animation_length = 0
   -- vim.g.neovide_text_contrast = 0.1
   -- vim.g.neovide_text_gamma = 0.8
@@ -56,7 +60,7 @@ if vim.g.neovide then
     end
   end)
 
-  vim.g.neovide_cursor_vfx_particle_density = 0
+  vim.g.neovide_cursor_vfx_particle_density = 1
   -- NEW SECTION
 
   -- resize with alt + and alt - and reset with alt 0
