@@ -53,6 +53,19 @@ return {
     ---@module "noice"
     ---@type NoiceConfig
     opts = {
+      -- Fixes a bug that makes it so stdout does not show up
+      -- routes = {
+      --   {
+      --     view = "notify",
+      --     filter = {
+      --       event = "msg_show",
+      --       kind = {
+      --         "shell_out",
+      --         "shell_err",
+      --       },
+      --     },
+      --   },
+      -- },
       cmdline = {
         view = "cmdline",
       },
@@ -79,6 +92,11 @@ return {
     ---@module "snacks"
     ---@type snacks.Config
     opts = {
+      -- picker = {
+      --   layout = {
+      --     preset = "ivy",
+      --   },
+      -- },
       -- statuscolumn = {
       --   enabled = true,
       --   left = {},

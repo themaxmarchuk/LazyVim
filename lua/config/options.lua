@@ -11,6 +11,21 @@ if is_win then
   vim.o.shellcmdflag = "-c"
   vim.o.shellquote = ""
   vim.o.shellxquote = ""
+
+  -- "proper" way to set it up so that !shell commands work, although I don't really use them
+  -- vim.opt.shell = "nu"
+  --
+  -- vim.opt.shellcmdflag = "--login --stdin --no-newline -c"
+  --
+  -- vim.opt.shellpipe =
+  --   "| complete | update stderr { ansi strip } | tee { get stderr | save --force --raw %s } | into record"
+  --
+  -- vim.opt.shellredir = "out+err> %s"
+  --
+  -- vim.opt.shellquote = ""
+  -- vim.opt.shellxquote = ""
+  -- vim.opt.shellxescape = ""
+  -- vim.opt.shelltemp = false
 end
 
 if vim.g.neovide then
