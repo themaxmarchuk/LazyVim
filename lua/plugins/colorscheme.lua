@@ -403,7 +403,7 @@ return {
   -- **
   { "dgrco/deepspace.nvim" },
   { "yuttie/hydrangea-nvim" },
-  { "barrettruth/midnight.nvim" },
+  { "https://forge.barrettruth.com/barrettruth/midnight.nvim" },
   {
     "sageveil/nvim",
     name = "sageveil",
@@ -416,5 +416,49 @@ return {
   -- **
   { "wu-json/yuki.nvim" },
   { "SomeCoder99/darkslate.nvim" },
+  -- **
+  {
+    "JazzJackrabbit/technicolor.nvim",
+    opts = { italics = false },
+  },
+  { "WTFox/luna.nvim" },
+  {
+    "Aejkatappaja/cendre",
+    opts = { italic_comments = false },
+  },
+  { "yedTheEmo/gore.nvim" },
+  -- **
+  {
+    "ramojus/mellifluous.nvim",
+    opts = {
+      colorset = "mountain",
+      flat_background = {
+        line_numbers = true,
+      },
+      styles = {
+        comments = { italic = false },
+      },
+    },
+  },
+  { "zacesshq/zacess.nvim" },
+  { "lanteignel93/spacecowboy.nvim" },
+  { "bytebeast/winteriscoming.nvim" },
+  { "mmugi/mmerr.nvim" },
+  -- **
+  { "nnavales/pria" },
+  { "webgtx/django.vim" },
+  {
+    "oxidescheme/nvim",
+    name = "oxide",
+    opts = {
+      -- transparent = true,
+      styles = {
+        comments = {
+          italic = false,
+        },
+      },
+    },
+  },
+  { "arnauKL/south.nvim" },
   -- TODO: prune colorschemes in general. only keep the ones you like
 }
